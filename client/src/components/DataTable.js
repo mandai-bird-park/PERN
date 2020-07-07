@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import LastUpdate from "./LastUpdate";
 import { MDBTable, MDBTableHead, MDBTableBody, MDBMedia } from "mdbreact";
-import Logo from "./placeholder.jpg"
 
 const DataTable = () => {
   
@@ -46,8 +45,8 @@ const DataTable = () => {
               <td> {datatable.bird_id}</td>
               <td> {datatable.aviary_id}</td>
               <td> {datatable.weight}</td>
-              <td> <img src = {getImage(datatable.image_path)} 
-                  alt = {datatable.image_path} width="80" height="80"></img></td>
+              <td> <MDBMedia object src = {getImage(datatable.image_path)} 
+                  alt = {datatable.image_path} width="80" height="80"/></td>
               <td> {datatable.time_stamp}</td>
             </tr>
           ))}             
