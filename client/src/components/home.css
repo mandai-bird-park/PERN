@@ -1,0 +1,11 @@
+body, html {
+    height: 100%;
+    }
+    .bg {
+    /* background-image: url("https://i.pinimg.com/originals/f4/07/6f/f4076f86b05790a0dd75845a311070f6.jpg"); */
+    background-image: url("https://wallpaperaccess.com/full/2114865.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }

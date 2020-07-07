@@ -1,0 +1,8 @@
+.col-md-8,
+.col-md-4 {
+padding: 1rem;
+background-color: #fff;
+border: 2px solid #fff;
+color: #000;
+text-align: left;
+}
