@@ -8,7 +8,7 @@ const DataTable = () => {
   const [datatable, setDatatable] = useState([]);
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/attendance");
+      const response = await fetch("http://192.168.1.109:5000/attendance");
       const jsonData = await response.json();
       setDatatable(jsonData);
     } catch (err) {
@@ -19,6 +19,12 @@ const DataTable = () => {
   useEffect(() => {
     getData();
   }, []);
+
+
+  const getImage = (path) => {
+    return require('./images/' + path);
+  };
+  
 
   return (
     <Fragment>
@@ -34,19 +40,17 @@ const DataTable = () => {
           </tr>
         </MDBTableHead>
         <MDBTableBody>
-        <getImage/>
           {datatable.map(datatable => (
             
             <tr key={datatable.time_stamp}>
               <td> {datatable.bird_id}</td>
               <td> {datatable.aviary_id}</td>
               <td> {datatable.weight}</td>
-              <td>                 
-                <MDBMedia object src= {Logo} //{require('./' + data.image_path)} // {Logo}                                                                             
-               alt={datatable.image_path} width="100" height="100"/> </td>
+              <td> <img src = {getImage(datatable.image_path)} 
+                  alt = {datatable.image_path} width="80" height="80"></img></td>
               <td> {datatable.time_stamp}</td>
             </tr>
-          ))}
+          ))}             
         </MDBTableBody></MDBTable><LastUpdate/>
     </Fragment>
     

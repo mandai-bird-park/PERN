@@ -7,7 +7,7 @@ const Bird = () => {
    const [data, setTodos] = useState([]);
    const getData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/bird");
+        const response = await fetch("http://192.168.1.109:5000/bird");
         const jsonData = await response.json();
         setTodos(jsonData);
       } catch (err) {
@@ -23,34 +23,26 @@ const Bird = () => {
     
     <MDBContainer>
     <br/><br/><br/><br/><br/><br/>
-    {data.map(data => (
+    {data.map(data => (<tr key={data.time_stamp}>
     <MDBRow>
         <MDBCol md="4"><MDBMedia object src=  {data.last_updated_image_path}                                                                    
              alt={data.bird_id} width="400" height="300"/>  </MDBCol>
         
 
-        <MDBCol md="8"><tr key={data.time_stamp}>
-             <h1> {data.bird_name} </h1> <br/>             
+        <MDBCol md="8">
+             <h2> {data.bird_name} </h2>             
              <p> Bird_id : {data.bird_id} </p>
              <p> Average Weight: {data.last_updated_weight} </p>
              <p> Last Seen: {data.last_updated_timestamp} </p>
-             <h3> Description </h3>
+             <p> Description </p>
              <p> {data.bird_description} </p>
-             </tr> </MDBCol>
-    </MDBRow>))}
+              </MDBCol>
+    </MDBRow></tr>))}
     <br/><br/><br/><br/><br/><br/>
   </MDBContainer>
     
    );
 
-   //  return (
-   //    <div className="bg1">
-   //       <div class="centered">
-   //        <h1>Work in progress</h1>
-          
-   //        </div>
-   //     </div>
-   //  );
 }
 
 export default Bird;

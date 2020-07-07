@@ -3,9 +3,7 @@ import { MDBContainer, MDBRow, MDBCol  } from 'mdbreact';
 import './About.css'
  
 const About = () => {
-
-  const test = require('./test.jpg')
-
+    const test = require('./test.jpg');
     return (
          
          <MDBContainer size="xl">
@@ -37,7 +35,7 @@ const About = () => {
                    <MDBCol md="100">
                      <img src={test} 
                     //   <img src="https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2016/06/01/aviaryjune1.jpg?itok=4RKF1tqn&timestamp=1464750922" 
-                      className="center" alt="no found" />
+                      className="center" alt="no image found" />
                    </MDBCol>
                </MDBRow>
          </MDBContainer>

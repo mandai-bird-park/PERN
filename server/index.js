@@ -29,27 +29,16 @@ app.use(express.json()); // req.body
 //  Get all todos
 app.get("/Attendance", async (req,res) => {
     try {
-        const allTodos = await pool.query("SELECT * FROM attendance ORDER BY time_stamp ASC")
+        const allTodos = await pool.query("SELECT * FROM attendance ORDER BY time_stamp ASC ")
         res.json(allTodos.rows)
     } catch (err) {
         console.error(err.message);
     }
 })
 
-//  Get all todos
-app.get("/Attendance/Bird_id", async (req,res) => {
-    try {
-        const allTodos = await pool.query("SELECT * FROM attendance ORDER BY bird_id ASC")
-        res.json(allTodos.rows)
-    } catch (err) {
-        console.error(err.message);
-    }
-})
-
-//  Get all todos
 app.get("/Attendance/Weight", async (req,res) => {
     try {
-        const allTodos = await pool.query("SELECT * FROM attendance ORDER BY weight ASC")
+        const allTodos = await pool.query("SELECT * FROM attendance ORDER BY Weight ASC ")
         res.json(allTodos.rows)
     } catch (err) {
         console.error(err.message);

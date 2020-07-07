@@ -11,7 +11,6 @@ import Error from './components/Error';
 import DataTable from './components/DataTable';
 import Aviary from './components/Aviary';
 import Bird from './components/Bird';
-import Test from './components/test';
 
 class App extends Component {
   render() {
@@ -19,14 +18,15 @@ class App extends Component {
        <BrowserRouter>
         <div>
           <Navigation />
-            <Switch>
-             <Route path="/home" component={Home} exact/>
+            <Switch>            
+             
+             <Route path="/home" component={Home}/>
              <Route path="/about" component={About}/>
              <Route path="/contact" component={Contact}/>
              <Route path="/attendance" component={DataTable}/>
              <Route path="/bird" component={Bird}/>
              <Route path="/aviary" component={Aviary}/>
-             <Route path="/test" component={Test}/>
+             <Route path="/" component={Home}/>
             <Route component={Error}/>
            </Switch>
         </div> 
