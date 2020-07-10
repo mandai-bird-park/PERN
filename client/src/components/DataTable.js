@@ -35,7 +35,7 @@ class DataTable extends React.Component {
     const { datatable } = this.state;
     console.log (datatable);
     if (!this.state.isLoaded) {
-      return <div>  Loading ... </div>;
+      return <div><br/><br/><br/>   Loading ... </div>;
     } else {
       return (
         <Fragment>
