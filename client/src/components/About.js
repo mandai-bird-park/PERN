@@ -1,9 +1,9 @@
 import React from 'react';
-import { MDBContainer, MDBRow, MDBCol  } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBMedia } from 'mdbreact';
 import './About.css'
  
 const About = () => {
-    const test = require('./test.jpg');
+
     return (
          
          <MDBContainer size="xl">
@@ -33,9 +33,7 @@ const About = () => {
                optimising the system for more accurate and reliable data collection.</p></div>
                <MDBRow className="mb-4">
                    <MDBCol md="100">
-                     <img src={test} 
-                    //   <img src="https://www.straitstimes.com/sites/default/files/styles/article_pictrure_780x520_/public/articles/2016/06/01/aviaryjune1.jpg?itok=4RKF1tqn&timestamp=1464750922" 
-                      className="center" alt="no image found" />
+                     <MDBMedia object src={require('./asset/impression.jpg')}  className="center" alt="no image found" />
                    </MDBCol>
                </MDBRow>
          </MDBContainer>

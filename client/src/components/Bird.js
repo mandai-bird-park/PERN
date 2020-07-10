@@ -32,7 +32,7 @@ class Bird extends React.Component {
     return (    
       <MDBContainer>
       <br/><br/><br/><br/><br/><br/>
-      {data.map(data => (<tr key={data.time_stamp}>
+      {data.map(data => (<tr>
       <MDBRow>
           <MDBCol md="4"><MDBMedia object src=  {data.last_updated_image_path}                                                                    
                alt={data.bird_id} width="400" height="300"/>  </MDBCol>
