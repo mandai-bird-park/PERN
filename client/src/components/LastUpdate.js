@@ -1,17 +1,32 @@
-import React, { Fragment } from "react";
+import React from 'react';
 
-const LastUpdate = () => {
-
-    var d = new Date();
-    var n = d.toJSON();
-
-    return (
-    <Fragment>
-        <p className="text-center mt-5">
-        Last Update :: {n}
+class Clock extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        time: new Date().toLocaleString()
+      };
+    }
+    componentDidMount() {
+      this.intervalID = setInterval(
+        () => this.tick(),
+        1000
+      );
+    }
+    componentWillUnmount() {
+      clearInterval(this.intervalID);
+    }
+    tick() {
+      this.setState({
+        time: new Date().toLocaleString()
+      });
+    }
+    render() {
+      return (
+        <p className="App-clock">
+          Last Update :: {this.state.time}.
         </p>
-    </Fragment>
-    );
-};
-
-export default LastUpdate;
+      );
+    }
+  }
+export default Clock;

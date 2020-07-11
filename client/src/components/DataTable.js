@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
+import React from "react";
 import LastUpdate from "./LastUpdate";
-import { MDBTable, MDBTableHead, MDBTableBody, MDBMedia } from "mdbreact";
+import { MDBTable, MDBTableHead, MDBTableBody, MDBMedia, MDBContainer } from "mdbreact";
 
 class DataTable extends React.Component {
   constructor(props) {
@@ -30,16 +30,15 @@ class DataTable extends React.Component {
     }
   };
 
+
   render() {
     
     const { datatable } = this.state;
-    console.log (datatable);
     if (!this.state.isLoaded) {
       return <div><br/><br/><br/>   Loading ... </div>;
     } else {
       return (
-        <Fragment>
-      <br/>
+        <MDBContainer>
        <MDBTable hover className="table mt-5 text-center" >
        <MDBTableHead>
            <tr>
@@ -63,7 +62,7 @@ class DataTable extends React.Component {
             </tr>
           ))}             
         </MDBTableBody></MDBTable><LastUpdate/>
-    </Fragment>
+        </MDBContainer>
       );
     }
     
