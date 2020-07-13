@@ -13,7 +13,7 @@ class Bird extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.1.109:5000/bird')
+    fetch('http://192.168.1.110:5000/bird')
       .then(res => res.json())
       .then(result => {
         this.setState({

@@ -18,8 +18,7 @@ class App extends Component {
        <BrowserRouter>
         <div>
           <Navigation />
-            <Switch>            
-             
+            <Switch>         
              <Route path="/home" component={Home}/>
              <Route path="/about" component={About}/>
              <Route path="/contact" component={Contact}/>
