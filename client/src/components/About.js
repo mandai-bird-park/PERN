@@ -1,11 +1,14 @@
 import React from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBMedia } from 'mdbreact';
+import ReactPlayer from "react-player"
+import { MDBContainer, MDBRow, MDBCol } from 'mdbreact';
 import './About.css'
  
-const About = () => {
+class About extends React.Component {
+  
+  render() {
 
     return (
-         
+      <div>
          <MDBContainer size="xl">
             
          <div className="sticky-top">
@@ -31,13 +34,17 @@ const About = () => {
                The project is currently in the prototyping phase and is being tested on small arboreal birds. Some
                data has been successfully collected by the system from tests. Future developments would include
                optimising the system for more accurate and reliable data collection.</p></div>
-               <MDBRow className="mb-4">
+               {/* <MDBRow className="mb-4">
                    <MDBCol md="100">
                      <MDBMedia object src={require('./asset/impression.jpg')}  className="center" alt="no image found" />
                    </MDBCol>
-               </MDBRow>
+               </MDBRow> */}
+               <MDBRow className="mb-4"><MDBCol md="100"> <ReactPlayer url="https://www.youtube.com/watch?v=WmkZRqvM1Mk" /></MDBCol> </MDBRow>
          </MDBContainer>
+          
+      
+    </div>
     );
+  }
 }
- 
 export default About;

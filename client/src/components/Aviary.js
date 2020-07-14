@@ -24,24 +24,29 @@ class Aviary extends React.Component {
    }
  
    componentDidMount() {
-     fetch('http://192.168.1.110:5000/aviary')
-       .then(res => res.json())
-       .then(result => {
-         this.setState({
-           isLoaded: true,
-           data: result
-         });
-       });
+     this.getData();
+   }
+
+   getData = () => {
+      fetch('http://192.168.1.110:5000/aviary')
+      .then(res => res.json())
+      .then(result => {
+        this.setState({
+          isLoaded: true,
+          data: result
+        });
+      });
+      this.intervalID = setTimeout(this.getData.bind(this), 15000);
    }
 
    fetchImage = (path) => {
       try {
-        return (<MDBMedia object src = {require('./asset/' + path + '.jpg')}  alt = {path} width="130" height="130"/>);
+        return (<MDBMedia object src = {require('./asset/' + path + '.jpg')}  alt = {path} width="200" height="200"/>);
       } catch (err) {
         return path + ' not found';
       }    
     };
-    
+
    render() {
      const { data } = this.state;
      console.log (data);
@@ -55,8 +60,8 @@ class Aviary extends React.Component {
             <MDBRow>
                <MDBCol md="4"> {this.fetchImage(data.aviary_image)} </MDBCol>   
                <MDBCol md="8">
-               <MDBTypography tag='h1'><MDBNavLink link to="#">{data.aviary_name}</MDBNavLink> </MDBTypography>       
-               <MDBTypography tag='p'><MDBNavLink link to="#">{data.bird_list.map(data =><tr>{data}</tr>)}</MDBNavLink> </MDBTypography>   
+               <MDBTypography tag='h1'><MDBNavLink link to='#'>{data.aviary_name}</MDBNavLink> </MDBTypography>       
+               <MDBTypography tag='p'>{data.bird_list.map(data =><MDBNavLink link to='#'>{data}</MDBNavLink> )}</MDBTypography>   
                </MDBCol>
             </MDBRow></tr>))}
             <br/><br/><br/><br/><br/><br/>
