@@ -19,7 +19,16 @@ app.get("/Attendance", async (req,res) => {
 
 app.get("/Bird", async (req,res) => {
     try {
-        const allTodos = await pool.query("SELECT * FROM bird")
+        const allTodos = await pool.query("SELECT * FROM bird ORDER BY bird_name asc")
+        res.json(allTodos.rows)
+    } catch (err) {
+        console.error(err.message);
+    }
+})
+
+app.get("/Aviary", async (req,res) => {
+    try {
+        const allTodos = await pool.query("SELECT * FROM aviary ORDER BY aviary_name asc")
         res.json(allTodos.rows)
     } catch (err) {
         console.error(err.message);

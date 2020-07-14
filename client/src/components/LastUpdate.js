@@ -2,11 +2,13 @@ import React from 'react';
 
 class Clock extends React.Component {
     constructor(props) {
+      
       super(props);
       this.state = {
-        time: new Date().toLocaleString()
+        time: new Date().toLocaleString('en-GB')
       };
     }
+    
     componentDidMount() {
       this.intervalID = setInterval(
         () => this.tick(),
@@ -18,14 +20,14 @@ class Clock extends React.Component {
     }
     tick() {
       this.setState({
-        time: new Date().toLocaleString()
+        time: new Date().toLocaleString('en-GB')
       });
     }
     render() {
       return (
-        <p className="App-clock">
-          Last Update :: {this.state.time}.
-        </p>
+        <div className="App-clock">
+          {this.state.time}.
+        </div>
       );
     }
   }

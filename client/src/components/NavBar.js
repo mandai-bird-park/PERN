@@ -42,6 +42,9 @@ class Navigation extends React.Component {
                   <MDBNavItem>
                   <MDBNavLink  to="/aviary">Aviary</MDBNavLink >
                   </MDBNavItem>
+                  {/* <MDBNavItem>
+                  <MDBNavLink  to="/link">Test</MDBNavLink >
+                  </MDBNavItem> */}
                   <MDBNavItem>
                   <MDBNavLink  to="/contact">Contact</MDBNavLink >
                   </MDBNavItem>

@@ -20,7 +20,7 @@ class App extends Component {
           <Navigation />
             <Switch>         
              <Route path="/home" component={Home}/>
-             <Route path="/about" component={About}/>
+             <Route path="/about" component={About}/>             
              <Route path="/contact" component={Contact}/>
              <Route path="/attendance" component={DataTable}/>
              <Route path="/bird" component={Bird}/>

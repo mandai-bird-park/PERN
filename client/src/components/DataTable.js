@@ -45,17 +45,17 @@ class DataTable extends React.Component {
               label: 'Image',
               field: 'image',
               width: 150,
+            },            
+            {
+              label: 'Date',
+              field: 'created_on',
+              width: 150,
             },
             {
               label: 'Time',
               field: 'created_at',
               width: 150,
             },
-            {
-              label: 'Date',
-              field: 'created_on',
-              width: 150,
-            }
 
           ],
           
