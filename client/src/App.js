@@ -11,6 +11,7 @@ import Error from './components/Error';
 import DataTable from './components/DataTable';
 import Aviary from './components/Aviary';
 import Bird from './components/Bird';
+import Trap from './components/Trap';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
              <Route path="/attendance" component={DataTable}/>
              <Route path="/bird" component={Bird}/>
              <Route path="/aviary" component={Aviary}/>
+             <Route path="/trap" component={Trap}/>
              <Route path="/" component={Home}/>
             <Route component={Error}/>
            </Switch>

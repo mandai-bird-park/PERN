@@ -23,6 +23,14 @@ class Bird extends React.Component {
       });
   }
 
+  getData(data) {
+    if (data == null) {
+      return "-";
+    } else {
+      return data;
+    }
+  }
+
   render() {
     const { data } = this.state;
     console.log (data);
@@ -34,17 +42,31 @@ class Bird extends React.Component {
       <br/><br/><br/><br/><br/><br/>
       {data.map(data => (<tr>
       <MDBRow>
-          <MDBCol md="4"><MDBMedia object src=  {data.last_updated_image_path}                                                                    
+          <MDBCol md="4"><br/><MDBMedia object src=  {data.bird_image}                                                                    
                alt={data.bird_id} width="400" height="300"/>  </MDBCol>
-          
-  
           <MDBCol md="8">
-               <h2> {data.bird_name} </h2>             
-               <p> Bird_id : {data.bird_id} </p>
-               <p> Average Weight: {data.last_updated_weight} </p>
-               <p> Last Seen: {data.last_updated_timestamp} </p>
-               <p> Description </p>
-               <p> {data.bird_description} </p>
+          <MDBTypography tag='h1'><MDBNavLink link to="#">{data.bird_name} </MDBNavLink> </MDBTypography>  
+          <dl className="row">  
+              <dt className="col-sm-3">Bird_id :</dt>
+              <dd className="col-sm-9">{data.bird_id}</dd>
+              
+              <dt className="col-sm-3">Description: </dt>
+              <dd className="col-sm-9">{data.bird_description}</dd>     
+
+              <dt className="col-sm-3">Aviary: </dt>
+              <dd className="col-sm-9">{this.getData(data.bird_aviary)} </dd>
+
+              <dt className="col-sm-3">Status: </dt>
+              <dd className="col-sm-9">{this.getData(data.bird_status)} </dd>
+
+              <dt className="col-sm-3">Weight: </dt>
+              <dd className="col-sm-9">{this.getData(data.bird_weight)} </dd>
+
+              <dt className="col-sm-3">Last Seen:</dt>
+              <dd className="col-sm-9">{this.getData(data.bird_last_seen)}</dd>     
+
+              
+          </dl>  
                 </MDBCol>
       </MDBRow></tr>))}
       <br/><br/><br/><br/><br/><br/>
