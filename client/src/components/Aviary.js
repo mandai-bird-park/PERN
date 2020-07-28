@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBMedia, MDBTypography, MDBBtn } from 'mdbreact'; 
+import { MDBContainer, MDBRow, MDBCol, MDBMedia, MDBTypography, MDBBtn, MDBProgress } from 'mdbreact'; 
 
 class Aviary extends React.Component {
 
@@ -100,6 +100,7 @@ class Aviary extends React.Component {
               {data.map(data => (
               <MDBRow>
                 <MDBCol md="4"> {this.fetchImage(data.aviary_image)} </MDBCol>   
+                
                 <MDBCol md="8">
                 <MDBTypography tag='h3' colorText="teal"><strong>{data.aviary_name}</strong> </MDBTypography> 
                 <MDBTypography tag='p'><dl className="row">  
@@ -114,12 +115,13 @@ class Aviary extends React.Component {
 
                     <dt className="col-sm-3">Alert:</dt>
                     <dd className="col-sm-9">{this.displayAttendance(data)} </dd>
-
                     <MDBBtn floating gradient="blue" onClick={() => alert(this.displayData(data.aviary_bird_collection))}>Bird Collection</MDBBtn>
                     <MDBBtn floating gradient="blue" onClick={() => alert(data.aviary_bird_reported)}>Bird Reported</MDBBtn>
                     <MDBBtn floating gradient="blue" onClick={() => alert(this.displayAbsent(data.aviary_bird_collection, data.aviary_bird_reported))}>Bird Absent</MDBBtn>
-
+                    
                   </dl></MDBTypography>
+                  {/* <MDBProgress value= className="my-2" /> */}
+                  <MDBProgress material value={25} height="20px" animated> 25% placeholder </MDBProgress>
                 </MDBCol>
               </MDBRow>))}
               <br/><br/><br/><br/><br/><br/>

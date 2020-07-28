@@ -8,15 +8,15 @@ const EditTodo = ({ todo }) => {
   const updateDescription = async e => {
     e.preventDefault();
     try {
-      const body = { description };
-      const response = await fetch(
-        `http://localhost:5000/trap`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body)
-        }
-      );
+      // const body = { description };
+      // const response = await fetch(
+      //   `http://localhost:5000/trap`,
+      //   {
+      //     method: "PUT",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(body)
+      //   }
+      // );
 
     window.location = "/trap";
     } catch (err) {

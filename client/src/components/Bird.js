@@ -1,5 +1,5 @@
 import React from 'react';
-import { MDBContainer, MDBRow, MDBCol, MDBMedia } from 'mdbreact';
+import { MDBContainer, MDBRow, MDBCol, MDBMedia, MDBTypography, MDBNavLink } from 'mdbreact';
 import './bird.css';
  
 class Bird extends React.Component {

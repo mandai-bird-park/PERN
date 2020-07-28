@@ -30,12 +30,13 @@ const About = () => {
                and alert the zookeeper to retrieve it.
                The project is currently in the prototyping phase and is being tested on small arboreal birds. Some
                data has been successfully collected by the system from tests. Future developments would include
-               optimising the system for more accurate and reliable data collection.</p></div>
+               optimising the system for more accurate and reliable data collection.</p></div><br/><br/>
                <MDBRow className="mb-4">
                    <MDBCol md="100">
                      <MDBMedia object src={require('./asset/impression.jpg')}  className="center" alt="no image found" />
                    </MDBCol>
                </MDBRow>
+               
          </MDBContainer>
     );
 }

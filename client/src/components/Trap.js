@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { MDBContainer, MDBBtn } from "mdbreact";
+import { MDBContainer } from "mdbreact";
 import EditTodo from "./Edit";
 
 const ListTodos = () => {
